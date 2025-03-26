@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seminario Sobre Archivo y Patrimonio Fílmico</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/seminario.css">
+</head>
+<body class="seminario-page">
+<!-- Cursor personalizado -->
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+
+<!-- Elementos de fondo experimentales -->
+<div class="experimental-bg">
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+  <div class="bg-shape shape-3"></div>
+  <div class="bg-shape shape-4"></div>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="logo">SEMINARIO</div>
+  <button class="menu-button">MENU</button>
+</header>
+
+<!-- Navegación principal -->
+<nav class="main-nav">
+  <div class="nav-header">
+    <div class="nav-social">
+      <a href="#" class="social-link">FACEBOOK</a>
+      <a href="#" class="social-link">INSTAGRAM</a>
+      <a href="#" class="social-link">LINKEDIN</a>
+    </div>
+    <button class="close-button">CLOSE</button>
+  </div>
+
+  <div class="nav-content">
+    <div class="nav-section">
+      <ul class="nav-links">
+        <li><a href="index.html">INICIO</a></li>
+        <li><a href="#horario">HORARIO</a></li>
+        <li><a href="#comites">COMITÉS</a></li>
+        <li><a href="#inscripcion">INSCRIPCIÓN</a></li>
+        <li><a href="#ponentes">PONENTES</a></li>
+        <li><a href="#organizadores">ORGANIZADORES</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-experimental">
+  <div class="hero-bg">
+    <div class="hero-image" style="background-image: url('assets/images/Fin.png')"></div>
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-text-wrapper">
+      <div class="hero-text-container">
+        <h1 class="hero-title">
+          <span class="title-line">SEMI</span>
+          <span class="title-line">NARIO</span>
+          <span class="title-accent">2025</span>
+        </h1>
+        <div class="hero-subtitle">
+          <span class="subtitle-line">MEMORIA</span>
+          <span class="subtitle-line">Y CINE</span>
+          <span class="subtitle-line">DOMÉSTICO</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <div class="scroll-text">EXPLORA</div>
+      <div class="scroll-indicator">
+        <span class="scroll-arrow"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-side-text">
+    <div class="vertical-text">ARCHIVO Y PATRIMONIO FÍLMICO</div>
+  </div>
+</section>
+
+<!-- Navegación de secciones -->
+<nav class="section-nav">
+  <ul>
+    <li><a href="#horario" class="section-link" data-section="01"><span>HORARIO</span></a></li>
+    <li><a href="#comites" class="section-link" data-section="02"><span>COMITÉS</span></a></li>
+    <li><a href="#inscripcion" class="section-link" data-section="03"><span>INSCRIPCIÓN</span></a></li>
+    <li><a href="#ponentes" class="section-link" data-section="04"><span>PONENTES</span></a></li>
+    <li><a href="#organizadores" class="section-link" data-section="05"><span>ORGANIZADORES</span></a></li>
+  </ul>
+</nav>
+
+<!-- 1. Horario y fechas Section -->
+<section id="horario" class="section-experimental">
+  <div class="section-header-experimental">
+    <div class="section-number">01</div>
+    <h2 class="section-title-experimental">HORARIO<span class="title-accent">.</span></h2>
+  </div>
+
+  <div class="section-content-experimental">
+    <div class="timeline-experimental">
+      <div class="timeline-days-tabs">
+        <button class="day-tab active" data-day="day1">DÍA 1</button>
+        <button class="day-tab" data-day="day2">DÍA 2</button>
+        <button class="day-tab" data-day="day3">DÍA 3</button>
+        <div class="tab-indicator"></div>
+      </div>
+
+      <div class="timeline-days-content">
+        <div class="day-content active" id="day1">
+          <div class="day-header">
+            <div class="day-date">15 OCT 2025</div>
+            <div class="day-title">INAUGURACIÓN Y CONFERENCIAS</div>
+          </div>
+
+          <div class="day-events">
+            <div class="event-card">
+              <div class="event-time">09:00</div>
+              <div class="event-details">
+                <h3 class="event-title">Inauguración del Seminario</h3>
+                <p class="event-description">Presentación a cargo de autoridades académicas y representantes institucionales</p>
+                <div class="event-meta">
+                  <span class="event-location">Salón de Actos Principal</span>
+                  <span class="event-duration">90 min</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="event-card">
+              <div class="event-time">11:00</div>
+              <div class="event-details">
+                <h3 class="event-title">Conferencia inaugural: "El valor del patrimonio fílmico"</h3>
+                <p class="event-description">A cargo de Dr. Manuel Martínez, Director de la Filmoteca Nacional</p>
+                <div class="event-meta">
+                  <span class="event-location">Auditorio Central</span>
+                  <span class="event-duration">120 min</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="event-card">
+              <div class="event-time">16:00</div>
+              <div class="event-details">
+                <h3 class="event-title">Mesa redonda: "Desafíos en la conservación digital"</h3>
+                <p class="event-description">Participan especialistas en restauración y conservación audiovisual</p>
+                <div class="event-meta">
+                  <span class="event-location">Sala de Conferencias B</span>
+                  <span class="event-duration">150 min</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-content" id="day2">
+          <div class="day-header">
+            <div class="day-date">16 OCT 2025</div>
+            <div class="day-title">TALLERES Y PROYECCIONES</div>
+          </div>
+
+          <div class="day-events">
+            <div class="event-card">
+              <div class="event-time">10:00</div>
+              <div class="event-details">
+                <h3 class="event-title">Taller práctico: "Digitalización de material fílmico"</h3>
+                <p class="event-description">Técnicas y herramientas para la preservación digital</p>
+                <div class="event-meta">
+                  <span class="event-location">Laboratorio Audiovisual</span>
+                  <span class="event-duration">120 min</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="event-card">
+              <div class="event-time">13:00</div>
+              <div class="event-details">
+                <h3 class="event-title">Presentación de proyectos de archivo</h3>
+                <p class="event-description">Experiencias internacionales en catalogación y acceso</p>
+                <div class="event-meta">
+                  <span class="event-location">Sala Multimedia</span>
+                  <span class="event-duration">90 min</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="event-card">
+              <div class="event-time">17:00</div>
+              <div class="event-details">
+                <h3 class="event-title">Proyección especial: "Memorias recuperadas"</h3>
+                <p class="event-description">Selección de material restaurado de archivos familiares</p>
+                <div class="event-meta">
+                  <span class="event-location">Filmoteca de Andalucía</span>
+                  <span class="event-duration">150 min</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-content" id="day3">
+          <div class="day-header">
+            <div class="day-date">17 OCT 2025</div>
+            <div class="day-title">CONFERENCIAS Y CLAUSURA</div>
+          </div>
+
+          <div class="day-events">
+            <div class="event-card">
+              <div class="event-time">09:30</div>
+              <div class="event-details">
+                <h3 class="event-title">Conferencia: "El cine doméstico como patrimonio cultural"</h3>
+                <p class="event-description">Análisis histórico y sociológico del cine familiar</p>
+                <div class="event-meta">
+                  <span class="event-location">Auditorio Central</span>
+                  <span class="event-duration">120 min</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="event-card">
+              <div class="event-time">12:00</div>
+              <div class="event-details">
+                <h3 class="event-title">Presentación de la plataforma digital de archivos</h3>
+                <p class="event-description">Demostración del nuevo repositorio de acceso público</p>
+                <div class="event-meta">
+                  <span class="event-location">Sala de Informática</span>
+                  <span class="event-duration">120 min</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="event-card">
+              <div class="event-time">16:00</div>
+              <div class="event-details">
+                <h3 class="event-title">Clausura y conclusiones</h3>
+                <p class="event-description">Resumen del seminario y próximas líneas de trabajo</p>
+                <div class="event-meta">
+                  <span class="event-location">Salón de Actos Principal</span>
+                  <span class="event-duration">120 min</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. Comités Section -->
+<section id="comites" class="section-experimental">
+  <div class="section-header-experimental">
+    <div class="section-number">02</div>
+    <h2 class="section-title-experimental">COMITÉS<span class="title-accent">.</span></h2>
+  </div>
+
+  <div class="section-content-experimental">
+    <div class="comites-experimental">
+      <div class="comites-container">
+        <div class="comite-tabs">
+          <button class="comite-tab active" data-comite="cientifico">CIENTÍFICO</button>
+          <button class="comite-tab" data-comite="organizador">ORGANIZADOR</button>
+          <button class="comite-tab" data-comite="tecnico">TÉCNICO</button>
+        </div>
+
+        <div class="comites-content">
+          <div class="comite-panel active" id="cientifico">
+            <div class="comite-grid">
+              <div class="comite-member">
+                <div class="member-photo" style="background-color: var(--accent-green)"></div>
+                <div class="member-info">
+                  <h3 class="member-name">Dra. Ana Rodríguez Pérez</h3>
+                  <div class="member-role">Presidenta</div>
+                  <div class="member-institution">Universidad de Córdoba</div>
+                </div>
+              </div>
+
+              <div class="comite-member">
+                <div class="member-photo" style="background-color: var(--accent-green)"></div>
+                <div class="member-info">
+                  <h3 class="member-name">Dr. Francisco Martínez López</h3>
+                  <div class="member-institution">Universidad Complutense de Madrid</div>
+                </div>
+              </div>
+
+              <div class="comite-member">
+                <div class="member-photo" style="background-color: var(--accent-green)"></div>
+                <div class="member-info">
+                  <h3 class="member-name">Dra. Elena Sánchez García</h3>
+                  <div class="member-institution">Universidad de Sevilla</div>
+                </div>
+              </div>
+
+              <div class="comite-member">
+                <div class="member-photo" style="background-color: var(--accent-green)"></div>
+                <div class="member-info">
+                  <h3 class="member-name">Dr. Roberto Gómez Fernández</h3>
+                  <div class="member-institution">Universidad de Barcelona</div>
+                </div>
+              </div>
+
+              <div class="comite-member">
+                <div class="member-photo" style="background-color: var(--accent-green)"></div>
+                <div class="member-info">
+                  <h3 class="member-name">Dra. Lucía Torres Méndez</h3>
+                  <div class="member-institution">Universidad de Granada</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="comite-panel" id="organizador">
+            <div class="comite-grid">
+              <div class="comite-member">
+                <div class="member-photo" style="background-color: var(--accent-green)"></div>
+                <div class="member-info">
+                  <h3 class="member-name">Dr. Carlos Jiménez Ruiz</h3>
+                  <div class="member-role">Coordinador General</div>
+                  <div class="member-institution">Universidad de Córdoba</div>
+                </div>
+              </div>
+
+              <div class="comite-member">
+                <div class="member-photo" style="background-color: var(--accent-green)"></div>
+                <div class="member-info">
+                  <h3 class="member-name">Dra. María López Sánchez</h3>
+                  <div class="member-institution">Filmoteca de Andalucía</div>
+                </div>
+              </div>
+
+              <div class="comite-member">
+                <div class="member-photo" style="background-color: var(--accent-green)"></div>
+                <div class="member-info">
+                  <h3 class="member-name">Dr. Javier Moreno Castillo</h3>
+                  <div class="member-institution">Universidad de Córdoba</div>
+                </div>
+              </div>
+
+              <div class="comite-member">
+                <div class="member-photo" style="background-color: var(--accent-green)"></div>
+                <div class="member-info">
+                  <h3 class="member-name">Dra. Laura Fernández Díaz</h3>
+                  <div class="member-institution">Centro Sociocultural Luciana Centeno</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="comite-panel" id="tecnico">
+            <div class="comite-grid">
+              <div class="comite-member">
+                <div class="member-photo" style="background-color: var(--accent-green)"></div>
+                <div class="member-info">
+                  <h3 class="member-name">Miguel Ángel Pérez Sánchez</h3>
+                  <div class="member-role">Coordinador Técnico</div>
+                  <div class="member-institution">Filmoteca de Andalucía</div>
+                </div>
+              </div>
+
+              <div class="comite-member">
+                <div class="member-photo" style="background-color: var(--accent-green)"></div>
+                <div class="member-info">
+                  <h3 class="member-name">Sara González Martín</h3>
+                  <div class="member-institution">Universidad de Córdoba</div>
+                </div>
+              </div>
+
+              <div class="comite-member">
+                <div class="member-photo" style="background-color: var(--accent-green)"></div>
+                <div class="member-info">
+                  <h3 class="member-name">David Ruiz Fernández</h3>
+                  <div class="member-institution">Centro Sociocultural Luciana Centeno</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Links inscripción Section -->
+<section id="inscripcion" class="section-experimental">
+  <div class="section-header-experimental">
+    <div class="section-number">03</div>
+    <h2 class="section-title-experimental">INSCRIPCIÓN<span class="title-accent">.</span></h2>
+  </div>
+
+  <div class="section-content-experimental">
+    <div class="inscripcion-experimental">
+      <div class="inscripcion-info">
+        <div class="info-block">
+          <h3 class="info-title">INFORMACIÓN GENERAL</h3>
+          <p class="info-text">La inscripción al seminario es gratuita pero requiere registro previo. Las plazas son limitadas y se asignarán por orden de inscripción.</p>
+        </div>
+
+        <div class="info-block">
+          <h3 class="info-title">FECHAS CLAVE</h3>
+          <div class="fechas-grid">
+            <div class="fecha-item">
+              <div class="fecha-numero">01</div>
+              <div class="fecha-mes">SEP</div>
+              <div class="fecha-desc">Apertura de inscripciones</div>
+            </div>
+
+            <div class="fecha-item">
+              <div class="fecha-numero">10</div>
+              <div class="fecha-mes">OCT</div>
+              <div class="fecha-desc">Cierre de inscripciones</div>
+            </div>
+
+            <div class="fecha-item">
+              <div class="fecha-numero">12</div>
+              <div class="fecha-mes">OCT</div>
+              <div class="fecha-desc">Confirmación de asistencia</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-block">
+          <h3 class="info-title">MODALIDADES</h3>
+          <div class="modalidades-grid">
+            <div class="modalidad-item">
+              <div class="modalidad-icon">P</div>
+              <div class="modalidad-title">PRESENCIAL</div>
+              <div class="modalidad-desc">Asistencia completa al seminario</div>
+            </div>
+
+            <div class="modalidad-item">
+              <div class="modalidad-icon">O</div>
+              <div class="modalidad-title">ONLINE</div>
+              <div class="modalidad-desc">Seguimiento en directo vía streaming</div>
+            </div>
+
+            <div class="modalidad-item">
+              <div class="modalidad-icon">M</div>
+              <div class="modalidad-title">MIXTA</div>
+              <div class="modalidad-desc">Combinación de ambas modalidades</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="inscripcion-actions">
+        <div class="action-buttons">
+          <a href="#" class="action-button primary">
+            <span class="button-text">FORMULARIO DE INSCRIPCIÓN</span>
+            <span class="button-icon">→</span>
+          </a>
+
+          <a href="#" class="action-button secondary">
+            <span class="button-text">PROGRAMA DETALLADO</span>
+            <span class="button-icon">↓</span>
+          </a>
+
+          <a href="#" class="action-button secondary">
+            <span class="button-text">SOLICITUD DE INFORMACIÓN</span>
+            <span class="button-icon">✉</span>
+          </a>
+        </div>
+
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="contact-label">EMAIL</span>
+            <a href="mailto:info@seminarioarchivo.es" class="contact-value">info@seminarioarchivo.es</a>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-label">TELÉFONO</span>
+            <a href="tel:+34957123456" class="contact-value">+34 957 123 456</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Ponentes Section -->
+<section id="ponentes" class="section-experimental">
+  <div class="section-header-experimental">
+    <div class="section-number">04</div>
+    <h2 class="section-title-experimental">PONENTES<span class="title-accent">.</span></h2>
+  </div>
+
+  <div class="section-content-experimental">
+    <div class="ponentes-experimental">
+      <div class="ponentes-slider">
+        <div class="ponentes-track">
+          <div class="ponente-slide">
+            <div class="ponente-card-experimental">
+              <div class="ponente-media">
+                <div class="ponente-image" style="background-color: var(--accent-green)"></div>
+                <div class="ponente-overlay"></div>
+              </div>
+              <div class="ponente-content">
+                <h3 class="ponente-name">Dr. Manuel Martínez</h3>
+                <div class="ponente-role">Director de la Filmoteca Nacional</div>
+                <p class="ponente-bio">Especialista en preservación y restauración de patrimonio fílmico con más de 25 años de experiencia en archivos audiovisuales.</p>
+                <div class="ponente-links">
+                  <a href="#" class="ponente-link">CV</a>
+                  <a href="#" class="ponente-link">Publicaciones</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ponente-slide">
+            <div class="ponente-card-experimental">
+              <div class="ponente-media">
+                <div class="ponente-image" style="background-color: var(--accent-green)"></div>
+                <div class="ponente-overlay"></div>
+              </div>
+              <div class="ponente-content">
+                <h3 class="ponente-name">Dra. Carmen Rodríguez</h3>
+                <div class="ponente-role">Universidad de Barcelona</div>
+                <p class="ponente-bio">Investigadora principal del proyecto "Memoria audiovisual colectiva" y autora de numerosas publicaciones sobre cine doméstico.</p>
+                <div class="ponente-links">
+                  <a href="#" class="ponente-link">CV</a>
+                  <a href="#" class="ponente-link">Publicaciones</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ponente-slide">
+            <div class="ponente-card-experimental">
+              <div class="ponente-media">
+                <div class="ponente-image" style="background-color: var(--accent-green)"></div>
+                <div class="ponente-overlay"></div>
+              </div>
+              <div class="ponente-content">
+                <h3 class="ponente-name">Dr. Antonio Sánchez</h3>
+                <div class="ponente-role">Archivo Histórico Nacional</div>
+                <p class="ponente-bio">Especialista en catalogación y digitalización de archivos históricos audiovisuales. Coordinador del proyecto europeo "Digital Memory".</p>
+                <div class="ponente-links">
+                  <a href="#" class="ponente-link">CV</a>
+                  <a href="#" class="ponente-link">Publicaciones</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ponente-slide">
+            <div class="ponente-card-experimental">
+              <div class="ponente-media">
+                <div class="ponente-image" style="background-color: var(--accent-green)"></div>
+                <div class="ponente-overlay"></div>
+              </div>
+              <div class="ponente-content">
+                <h3 class="ponente-name">Dra. Laura Gómez</h3>
+                <div class="ponente-role">Universidad Complutense de Madrid</div>
+                <p class="ponente-bio">Investigadora especializada en historia del cine español y patrimonio audiovisual. Directora del grupo de investigación "Memoria y Cine".</p>
+                <div class="ponente-links">
+                  <a href="#" class="ponente-link">CV</a>
+                  <a href="#" class="ponente-link">Publicaciones</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ponente-slide">
+            <div class="ponente-card-experimental">
+              <div class="ponente-media">
+                <div class="ponente-image" style="background-color: var(--accent-green)"></div>
+                <div class="ponente-overlay"></div>
+              </div>
+              <div class="ponente-content">
+                <h3 class="ponente-name">Dr. Javier Pérez</h3>
+                <div class="ponente-role">Filmoteca de Andalucía</div>
+                <p class="ponente-bio">Responsable del departamento de restauración y conservación. Experto en técnicas de preservación de material fílmico en formatos obsoletos.</p>
+                <div class="ponente-links">
+                  <a href="#" class="ponente-link">CV</a>
+                  <a href="#" class="ponente-link">Publicaciones</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ponente-slide">
+            <div class="ponente-card-experimental">
+              <div class="ponente-media">
+                <div class="ponente-image" style="background-color: var(--accent-green)"></div>
+                <div class="ponente-overlay"></div>
+              </div>
+              <div class="ponente-content">
+                <h3 class="ponente-name">Dra. María Fernández</h3>
+                <div class="ponente-role">Universidad de Sevilla</div>
+                <p class="ponente-bio">Especialista en antropología visual y documentación etnográfica. Directora del proyecto "Memorias familiares en imágenes".</p>
+                <div class="ponente-links">
+                  <a href="#" class="ponente-link">CV</a>
+                  <a href="#" class="ponente-link">Publicaciones</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slider-controls">
+          <button class="slider-arrow prev">←</button>
+          <div class="slider-dots">
+            <span class="slider-dot active"></span>
+            <span class="slider-dot"></span>
+            <span class="slider-dot"></span>
+            <span class="slider-dot"></span>
+            <span class="slider-dot"></span>
+            <span class="slider-dot"></span>
+          </div>
+          <button class="slider-arrow next">→</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Organizadores y logos Section -->
+<section id="organizadores" class="section-experimental">
+  <div class="section-header-experimental">
+    <div class="section-number">05</div>
+    <h2 class="section-title-experimental">ORGANIZADORES<span class="title-accent">.</span></h2>
+  </div>
+
+  <div class="section-content-experimental">
+    <div class="organizadores-experimental">
+      <div class="organizadores-intro">
+        <p class="intro-text">El Seminario sobre Archivo y Patrimonio Fílmico es posible gracias a la colaboración de diversas instituciones comprometidas con la preservación y difusión del patrimonio audiovisual.</p>
+      </div>
+
+      <div class="organizadores-grid">
+        <div class="organizadores-column">
+          <h3 class="column-title">ORGANIZAN</h3>
+          <div class="logos-container">
+            <div class="logo-item-experimental">
+              <div class="logo-shape">
+                <div class="logo-content">PLANNEO</div>
+              </div>
+              <div class="logo-name">PLANNEO</div>
+            </div>
+
+            <div class="logo-item-experimental">
+              <div class="logo-shape">
+                <div class="logo-content">FILMOTECA</div>
+              </div>
+              <div class="logo-name">Filmoteca de Andalucía</div>
+            </div>
+
+            <div class="logo-item-experimental">
+              <div class="logo-shape">
+                <div class="logo-content">UCO</div>
+              </div>
+              <div class="logo-name">Universidad de Córdoba</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="organizadores-column">
+          <h3 class="column-title">COLABORAN</h3>
+          <div class="logos-container">
+            <div class="logo-item-experimental">
+              <div class="logo-shape">
+                <div class="logo-content">CSCLC</div>
+              </div>
+              <div class="logo-name">Centro Sociocultural Luciana Centeno</div>
+            </div>
+
+            <div class="logo-item-experimental">
+              <div class="logo-shape">
+                <div class="logo-content">JUNTA</div>
+              </div>
+              <div class="logo-name">Junta de Andalucía</div>
+            </div>
+
+            <div class="logo-item-experimental">
+              <div class="logo-shape">
+                <div class="logo-content">AYTO</div>
+              </div>
+              <div class="logo-name">Ayuntamiento de Córdoba</div>
+            </div>
+
+            <div class="logo-item-experimental">
+              <div class="logo-shape">
+                <div class="logo-content">MINCUL</div>
+              </div>
+              <div class="logo-name">Ministerio de Cultura</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-logo">SEMINARIO SOBRE ARCHIVO Y PATRIMONIO FÍLMICO</div>
+    <div class="footer-info">© 2025 Memoria y cine doméstico</div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/seminario.js"></script>
+</body>
+</html>

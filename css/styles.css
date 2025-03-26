@@ -1,0 +1,950 @@
+/* Base Styles - Mobile First Approach */
+:root {
+    --primary-color: #f5f2e3; /* Fondo beige/crema */
+    --text-color: #111111;
+    --accent-color: #d13c30; /* Rojo del triángulo */
+    --background-color: #f5f2e3;
+    --background-green: #72AC82;
+    --light-color: #FFFFFF;
+    --transition-speed: 0.3s;
+    --cursor-color: #d13c30;
+    --cursor-border: #111111;
+    --section-spacing-mobile: 3rem;
+    --section-spacing-desktop: 6rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Solo aplicar cursor: none en dispositivos que soporten hover */
+@media (hover: hover) {
+    * {
+        cursor: none !important;
+    }
+
+    html, body {
+        cursor: none !important;
+    }
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+    transition: opacity 0.5s ease;
+    position: relative;
+    opacity: 0; /* Inicialmente invisible para transición de carga */
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+/* Clase para deshabilitar el scroll cuando el menú está abierto */
+body.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+/* Custom Cursor - Dynamic effect - Optimizado */
+.cursor {
+    position: fixed;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--background-green);
+    border: 2px solid var(--cursor-border);
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s, transform 0.1s;
+    mix-blend-mode: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    will-change: transform;
+}
+
+.cursor::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(
+            circle at center,
+            transparent 30%,
+            var(--background-green) 70%
+    );
+    animation: pulse 2s infinite alternate;
+}
+
+.cursor-follower {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid var(--background-green);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s, width 0.3s, height 0.3s;
+    will-change: transform;
+}
+
+/* Cursor hover effect */
+.cursor.active {
+    width: 40px;
+    height: 40px;
+    mix-blend-mode: difference;
+    background-color: var(--light-color);
+    border-color: transparent;
+}
+
+.cursor.active::after {
+    opacity: 0;
+}
+
+.cursor-follower.active {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+/* Cursor reveal effect */
+.cursor.reveal-effect {
+    background-color: transparent;
+    border: 2px solid var(--background-green);
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.cursor.reveal-effect::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: transparent;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px 20px var(--background-green);
+    opacity: 0.3;
+    animation: reveal-pulse 1.5s infinite alternate;
+}
+
+.cursor.reveal-effect::after {
+    background: radial-gradient(
+            circle at center,
+            transparent 0%,
+            rgba(209, 60, 48, 0.3) 50%,
+            var(--background-green) 100%
+    );
+    animation: reveal-wave 2s infinite linear;
+}
+
+.cursor-follower.reveal-effect {
+    border-color: transparent;
+    background: radial-gradient(
+            circle at center,
+            var(--background-green) 0%,
+            transparent 70%
+    );
+    width: 80px;
+    height: 80px;
+    opacity: 0.2;
+    animation: follower-pulse 2s infinite alternate;
+}
+
+/* Animaciones optimizadas para usar propiedades que no causan reflow */
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+@keyframes reveal-pulse {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0.3;
+    }
+    100% {
+        width: 30px;
+        height: 30px;
+        opacity: 0.1;
+    }
+}
+
+@keyframes reveal-wave {
+    0% {
+        transform: scale(0.5);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(0.5);
+        opacity: 0.8;
+    }
+}
+
+@keyframes follower-pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.3;
+    }
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    transition: opacity var(--transition-speed);
+}
+
+header.menu-open {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 900;
+    letter-spacing: -0.05em;
+}
+
+.menu-button {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    border: none;
+    padding: 0.5rem 0.75rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    transition: transform var(--transition-speed);
+}
+
+.menu-button:hover {
+    transform: scale(1.05);
+}
+
+/* Navigation - Updated to match reference */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--background-green);
+    color: var(--text-color);
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-speed), visibility var(--transition-speed);
+    overflow-y: auto;
+}
+
+.main-nav.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1000;
+}
+
+.nav-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    z-index: 1001;
+    background-color: var(--background-green); /* Cambiado a verde para que coincida con el resto del menú */
+}
+
+.nav-social {
+    display: flex;
+    gap: 10px;
+    margin-right: 20px; /* Añadir espacio a la derecha para separar del botón cerrar */
+}
+
+.social-link {
+    background-color: var(--text-color);
+    color: var(--background-green); /* Actualizado para que coincida con el nuevo fondo */
+    padding: 8px 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform var(--transition-speed);
+}
+
+.social-link:hover {
+    transform: scale(1.05);
+}
+
+.close-button {
+    background-color: var(--text-color);
+    color: var(--background-green); /* Actualizado para que coincida con el nuevo fondo */
+    border: none;
+    padding: 8px 12px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: transform var(--transition-speed);
+}
+
+.close-button:hover {
+    transform: scale(1.05);
+}
+
+.nav-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 1rem;
+    margin-top: 60px; /* Espacio para el header */
+}
+
+.nav-section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 70vh; /* Distribuir los enlaces por toda la altura disponible */
+}
+
+.nav-links li {
+    margin-bottom: 0;
+}
+
+.nav-links li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 900;
+    line-height: 1.2;
+    display: block;
+    transition: transform var(--transition-speed);
+}
+
+.nav-links li a:hover {
+    transform: translateX(10px);
+}
+
+/* Hero Section - Modificado para división diagonal */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5rem 1.5rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-green);
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    z-index: -1;
+    opacity: 0.15;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+/* Contenedor de texto principal */
+.hero-text-container {
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    z-index: 2;
+}
+
+.main-title {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.05em;
+    position: relative;
+}
+
+.subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.university-info {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    margin-top: 2rem;
+}
+
+/* Modificado para división diagonal desde esquina inferior izquierda a superior derecha */
+.hero-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 100%, 100% 0, 100% 100%);
+    z-index: 0;
+}
+
+.experimental-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    transform: none;
+    will-change: transform;
+}
+
+.experimental-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-green);
+    opacity: 0.2;
+    z-index: 1;
+}
+
+.experimental-image .main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.1);
+    filter: contrast(1.1);
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+.experimental-image:hover .main-img {
+    transform: scale(1.15);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(114, 172, 130, 0.3) 0%, rgba(114, 172, 130, 0.6) 100%);
+    z-index: 2;
+    mix-blend-mode: multiply;
+}
+
+.vertical-text {
+    font-size: 0.875rem;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    position: absolute;
+    right: 1rem;
+    bottom: 2rem;
+    height: auto;
+    display: flex;
+    align-items: center;
+    z-index: 3;
+    color: var(--background-color);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.hero-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.social-icon img {
+    width: 100%;
+    height: 100%;
+}
+
+.pagination-dots {
+    display: flex;
+    gap: 5px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.dot.active {
+    background-color: var(--text-color);
+}
+
+.partner-logos {
+    display: flex;
+    gap: 10px;
+}
+
+.small-logo {
+    height: 20px;
+    width: auto;
+}
+
+/* Content Sections - Rediseñado para coincidir con la estética */
+.content-section {
+    padding: 5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.section-header {
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.05em;
+    position: relative;
+}
+
+.section-subtitle {
+    font-size: 0.875rem;
+    font-weight: 500;
+    opacity: 0.7;
+}
+
+.section-content {
+    max-width: 800px;
+}
+
+.section-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--text-color);
+    color: var(--background-color);
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: 700;
+    font-size: 0.875rem;
+    transition: transform var(--transition-speed);
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    padding: 3rem 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.footer-logo {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    position: relative;
+}
+
+.footer-info {
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+
+/* Ocultar cursor en dispositivos táctiles */
+@media (hover: none) {
+    .cursor, .cursor-follower {
+        display: none !important;
+    }
+
+    * {
+        cursor: auto !important;
+    }
+}
+
+/* Tablet Media Query (830px) */
+@media (min-width: 830px) {
+    .cursor {
+        width: 30px;
+        height: 30px;
+    }
+
+    .cursor-follower {
+        width: 60px;
+        height: 60px;
+    }
+
+    .cursor.active {
+        width: 50px;
+        height: 50px;
+    }
+
+    header {
+        padding: 1.75rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .menu-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+
+    .nav-header {
+        padding: 1.5rem;
+    }
+
+    .nav-social {
+        gap: 15px;
+        margin-right: 30px;
+    }
+
+    .nav-content {
+        padding: 0 4rem;
+    }
+
+    .nav-links li a {
+        font-size: clamp(3rem, 6vw, 5rem);
+    }
+
+    .social-link, .close-button {
+        padding: 10px 15px;
+        font-size: 0.875rem;
+    }
+
+    .hero {
+        padding: 6rem 3rem 2rem;
+    }
+
+    .hero-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .hero-text-container {
+        width: 50%;
+        margin-bottom: 0;
+    }
+
+    .vertical-text {
+        right: 2rem;
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 3rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-text {
+        font-size: 1.125rem;
+    }
+
+    .content-section {
+        padding: 6rem 3rem;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .section-header {
+        width: 40%;
+        margin-bottom: 0;
+    }
+
+    .section-content {
+        width: 55%;
+    }
+
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/* Desktop Media Query (1024px) */
+@media (min-width: 1024px) {
+    .cursor {
+        width: 36px;
+        height: 36px;
+    }
+
+    .cursor-follower {
+        width: 70px;
+        height: 70px;
+    }
+
+    .cursor.active {
+        width: 60px;
+        height: 60px;
+    }
+
+    header {
+        padding: 2rem;
+    }
+
+    .logo {
+        font-size: 1.75rem;
+    }
+
+    .menu-button {
+        padding: 0.5rem 1.25rem;
+        font-size: 1rem;
+    }
+
+    .nav-header {
+        padding: 2rem;
+    }
+
+    .nav-social {
+        gap: 20px;
+        margin-right: 40px;
+    }
+
+    .nav-content {
+        padding: 0 6rem;
+    }
+
+    .nav-links li a {
+        font-size: clamp(4rem, 7vw, 6rem);
+    }
+
+    .social-link, .close-button {
+        padding: 12px 18px;
+        font-size: 1rem;
+    }
+
+    .hero {
+        padding: 8rem 5rem 3rem;
+    }
+
+    .main-title {
+        font-size: 5rem;
+    }
+
+    .subtitle {
+        font-size: 1.25rem;
+    }
+
+    .university-info {
+        font-size: 1rem;
+    }
+
+    /* Modificado para división diagonal */
+    .hero-content {
+        gap: 3rem;
+    }
+
+    .hero-text-container {
+        width: 45%;
+        max-width: 600px;
+    }
+
+    .vertical-text {
+        right: 3rem;
+        font-size: 1.25rem;
+        font-weight: 500;
+    }
+
+    .content-section {
+        padding: 8rem 5rem;
+    }
+
+    .section-title {
+        font-size: 4rem;
+    }
+
+    .section-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .section-text {
+        font-size: 1.25rem;
+    }
+
+    .cta-button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-logo {
+        font-size: 1.25rem;
+    }
+
+    .footer-info {
+        font-size: 0.875rem;
+    }
+}
+
+/* En pantallas muy grandes */
+@media (min-width: 1440px) {
+    .hero-text-container {
+        width: 40%;
+    }
+
+    .main-title {
+        font-size: 6rem;
+    }
+
+    .vertical-text {
+        font-size: 1.75rem;
+        right: 4rem;
+    }
+}
+
+/* Animaciones para elementos al hacer scroll - Optimizado */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    will-change: opacity, transform;
+}
+
+.animate-on-scroll.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Prevenir flash de contenido sin estilo */
+.js-loaded {
+    visibility: visible;
+}
+
+html:not(.js-loaded) {
+    visibility: hidden;
+}
+
+/* Asegurar que los textos tengan un fondo limpio */
+.main-title, .section-title, .subtitle, .section-text, p, h1, h2, h3, .logo, .footer-logo {
+    position: relative;
+    z-index: 1; /* Asegurar que estén por encima del ruido */
+    background-color: transparent; /* Fondo transparente */
+}
+
+/* Estilos específicos para móviles */
+@media (max-width: 768px) {
+    /* Asegurar que el contenido sea visible */
+    body, html {
+        min-height: 100%;
+        height: auto;
+    }
+
+    /* Ajustar espaciado para móviles */
+    .hero {
+        padding-top: 4rem;
+    }
+
+    /* Ajustar la división diagonal para móviles */
+    .hero-image-container {
+        clip-path: polygon(0 70%, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .hero-text-container {
+        width: 100%;
+        z-index: 2;
+    }
+
+    .main-title, .subtitle, .university-info {
+        text-shadow: 0 1px 3px rgba(255,255,255,0.7);
+    }
+}
