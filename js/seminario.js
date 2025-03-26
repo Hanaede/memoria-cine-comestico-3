@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Animación para elementos al hacer scroll
     const animateOnScroll = () => {
-        const sections = document.querySelectorAll(".seminario-section")
+        const sections = document.querySelectorAll(".content-block")
 
         sections.forEach((section) => {
             const sectionTop = section.getBoundingClientRect().top
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 // Animar elementos dentro de la sección
                 const elements = section.querySelectorAll(
-                    ".timeline-tabs, .day-events, .comite-grid, .fechas-grid, .modalidades-grid, .action-buttons, .ponentes-slider, .logos-container",
+                    ".block-header, .timeline-container, .comites-wrapper, .inscripcion-container, .ponentes-gallery, .organizadores-container",
                 )
                 elements.forEach((el, index) => {
                     setTimeout(() => {
@@ -42,29 +42,29 @@ document.addEventListener("DOMContentLoaded", () => {
     // Ejecutar animación al hacer scroll
     window.addEventListener("scroll", throttle(animateOnScroll, 200))
 
-    // Tabs para días del horario
-    const dayTabs = document.querySelectorAll(".day-tab")
-    const dayContents = document.querySelectorAll(".day-content")
+    // Timeline navigation
+    const timelineNavItems = document.querySelectorAll(".timeline-nav-item")
+    const timelineDays = document.querySelectorAll(".timeline-day")
 
-    dayTabs.forEach((tab) => {
-        tab.addEventListener("click", function () {
+    timelineNavItems.forEach((item) => {
+        item.addEventListener("click", function () {
             const dayId = this.getAttribute("data-day")
 
-            // Actualizar tabs
-            dayTabs.forEach((t) => t.classList.remove("active"))
+            // Actualizar navegación
+            timelineNavItems.forEach((navItem) => navItem.classList.remove("active"))
             this.classList.add("active")
 
             // Actualizar contenido
-            dayContents.forEach((content) => {
-                content.classList.remove("active")
-                if (content.id === dayId) {
-                    content.classList.add("active")
+            timelineDays.forEach((day) => {
+                day.classList.remove("active")
+                if (day.id === dayId) {
+                    day.classList.add("active")
                 }
             })
         })
     })
 
-    // Tabs para comités
+    // Comités tabs
     const comiteTabs = document.querySelectorAll(".comite-tab")
     const comitePanels = document.querySelectorAll(".comite-panel")
 
@@ -86,58 +86,56 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     })
 
-    // Slider de ponentes
-    const sliderTrack = document.querySelector(".ponentes-track")
-    const slides = document.querySelectorAll(".ponente-slide")
-    const prevButton = document.querySelector(".slider-arrow.prev")
-    const nextButton = document.querySelector(".slider-arrow.next")
-    const dots = document.querySelectorAll(".slider-dot")
+    // Ponentes gallery
+    const galleryTrack = document.querySelector(".gallery-track")
+    const ponenteCards = document.querySelectorAll(".ponente-card")
+    const prevButton = document.querySelector(".gallery-arrow.prev")
+    const nextButton = document.querySelector(".gallery-arrow.next")
+    const paginationCurrent = document.querySelector(".pagination-current")
+    const paginationTotal = document.querySelector(".pagination-total")
 
-    if (sliderTrack && slides.length > 0) {
+    if (galleryTrack && ponenteCards.length > 0) {
         let currentSlide = 0
-        const slideWidth = 100 // Porcentaje
+        const totalSlides = ponenteCards.length
+
+        // Actualizar paginación total
+        if (paginationTotal) {
+            paginationTotal.textContent = totalSlides.toString().padStart(2, "0")
+        }
 
         // Función para actualizar el slider
-        const updateSlider = () => {
+        const updateGallery = () => {
             // Actualizar posición del track
-            sliderTrack.style.transform = `translateX(-${currentSlide * slideWidth}%)`
+            galleryTrack.style.transform = `translateX(-${currentSlide * 100}%)`
 
-            // Actualizar dots
-            dots.forEach((dot, index) => {
-                dot.classList.toggle("active", index === currentSlide)
-            })
+            // Actualizar paginación
+            if (paginationCurrent) {
+                paginationCurrent.textContent = (currentSlide + 1).toString().padStart(2, "0")
+            }
         }
 
         // Event listeners para los botones
         if (prevButton) {
             prevButton.addEventListener("click", () => {
-                currentSlide = currentSlide > 0 ? currentSlide - 1 : slides.length - 1
-                updateSlider()
+                currentSlide = currentSlide > 0 ? currentSlide - 1 : totalSlides - 1
+                updateGallery()
             })
         }
 
         if (nextButton) {
             nextButton.addEventListener("click", () => {
-                currentSlide = currentSlide < slides.length - 1 ? currentSlide + 1 : 0
-                updateSlider()
+                currentSlide = currentSlide < totalSlides - 1 ? currentSlide + 1 : 0
+                updateGallery()
             })
         }
-
-        // Event listeners para los dots
-        dots.forEach((dot, index) => {
-            dot.addEventListener("click", () => {
-                currentSlide = index
-                updateSlider()
-            })
-        })
 
         // Autoplay del slider
         let autoplayInterval
 
         const startAutoplay = () => {
             autoplayInterval = setInterval(() => {
-                currentSlide = currentSlide < slides.length - 1 ? currentSlide + 1 : 0
-                updateSlider()
+                currentSlide = currentSlide < totalSlides - 1 ? currentSlide + 1 : 0
+                updateGallery()
             }, 5000)
         }
 
@@ -149,33 +147,13 @@ document.addEventListener("DOMContentLoaded", () => {
         startAutoplay()
 
         // Detener autoplay al interactuar
-        sliderTrack.addEventListener("mouseenter", stopAutoplay)
-        sliderTrack.addEventListener("mouseleave", startAutoplay)
-
-        // Responsive slider
-        const updateSlideWidth = () => {
-            const windowWidth = window.innerWidth
-            let slidesPerView = 1
-
-            if (windowWidth >= 1440) {
-                slidesPerView = 3
-            } else if (windowWidth >= 1024) {
-                slidesPerView = 2
-            }
-
-            slides.forEach((slide) => {
-                slide.style.minWidth = `${100 / slidesPerView}%`
-            })
-        }
-
-        // Actualizar al cargar y al cambiar tamaño
-        updateSlideWidth()
-        window.addEventListener("resize", throttle(updateSlideWidth, 200))
+        galleryTrack.addEventListener("mouseenter", stopAutoplay)
+        galleryTrack.addEventListener("mouseleave", startAutoplay)
     }
 
     // Navegación de secciones
     const sectionLinks = document.querySelectorAll(".section-link")
-    const sections = document.querySelectorAll(".seminario-section")
+    const sections = document.querySelectorAll(".content-block")
 
     const updateActiveSection = () => {
         const scrollPosition = window.scrollY
