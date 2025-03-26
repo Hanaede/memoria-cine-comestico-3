@@ -10,18 +10,10 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/seminario.css">
 </head>
-<body class="seminario-page">
+<body>
 <!-- Cursor personalizado -->
 <div class="cursor"></div>
 <div class="cursor-follower"></div>
-
-<!-- Elementos de fondo experimentales -->
-<div class="experimental-bg">
-  <div class="bg-shape shape-1"></div>
-  <div class="bg-shape shape-2"></div>
-  <div class="bg-shape shape-3"></div>
-  <div class="bg-shape shape-4"></div>
-</div>
 
 <!-- Header -->
 <header>
@@ -55,34 +47,39 @@
 </nav>
 
 <!-- Hero Section -->
-<section class="hero-experimental">
-  <div class="hero-bg">
-    <div class="hero-image" style="background-image: url('assets/images/Fin.png')"></div>
-    <div class="hero-overlay"></div>
-  </div>
+<section class="seminario-hero">
+  <div class="hero-diagonal-split"></div>
 
   <div class="hero-content">
-    <div class="hero-text-wrapper">
-      <div class="hero-text-container">
+    <div class="hero-text-container">
+      <div class="hero-title-wrapper">
         <h1 class="hero-title">
-          <span class="title-line">SEMI</span>
-          <span class="title-line">NARIO</span>
-          <span class="title-accent">2025</span>
+          <span class="title-fragment">SE</span>
+          <span class="title-fragment">MI</span>
+          <span class="title-fragment">NA</span>
+          <span class="title-fragment">RIO</span>
+          <span class="title-year">2025</span>
         </h1>
-        <div class="hero-subtitle">
-          <span class="subtitle-line">MEMORIA</span>
-          <span class="subtitle-line">Y CINE</span>
-          <span class="subtitle-line">DOMÉSTICO</span>
+      </div>
+      <div class="hero-scroll">
+        <div class="scroll-text">EXPLORA</div>
+        <div class="scroll-indicator">
+          <span class="scroll-arrow"></span>
         </div>
       </div>
+<!--      <div class="hero-subtitle">-->
+<!--        <span class="subtitle-line">MEMORIA</span>-->
+<!--        <span class="subtitle-line">Y CINE</span>-->
+<!--        <span class="subtitle-line">DOMÉSTICO</span>-->
+<!--      </div>-->
     </div>
 
-    <div class="hero-scroll">
-      <div class="scroll-text">EXPLORA</div>
-      <div class="scroll-indicator">
-        <span class="scroll-arrow"></span>
-      </div>
-    </div>
+
+  </div>
+
+  <div class="hero-image">
+    <img src="assets/images/triangle.jpg" alt="Seminario 2025" class="hero-bg-image">
+    <div class="hero-image-overlay"></div>
   </div>
 
   <div class="hero-side-text">
@@ -91,7 +88,7 @@
 </section>
 
 <!-- Navegación de secciones -->
-<nav class="section-nav">
+<nav class="section-navigation">
   <ul>
     <li><a href="#horario" class="section-link" data-section="01"><span>HORARIO</span></a></li>
     <li><a href="#comites" class="section-link" data-section="02"><span>COMITÉS</span></a></li>
@@ -102,22 +99,24 @@
 </nav>
 
 <!-- 1. Horario y fechas Section -->
-<section id="horario" class="section-experimental">
-  <div class="section-header-experimental">
+<section id="horario" class="seminario-section">
+  <div class="section-diagonal-split"></div>
+
+  <div class="section-header">
     <div class="section-number">01</div>
-    <h2 class="section-title-experimental">HORARIO<span class="title-accent">.</span></h2>
+    <h2 class="section-title">HORARIO<span class="title-accent">.</span></h2>
   </div>
 
-  <div class="section-content-experimental">
-    <div class="timeline-experimental">
-      <div class="timeline-days-tabs">
+  <div class="section-content">
+    <div class="timeline">
+      <div class="timeline-tabs">
         <button class="day-tab active" data-day="day1">DÍA 1</button>
         <button class="day-tab" data-day="day2">DÍA 2</button>
         <button class="day-tab" data-day="day3">DÍA 3</button>
         <div class="tab-indicator"></div>
       </div>
 
-      <div class="timeline-days-content">
+      <div class="timeline-content">
         <div class="day-content active" id="day1">
           <div class="day-header">
             <div class="day-date">15 OCT 2025</div>
@@ -258,129 +257,129 @@
 </section>
 
 <!-- 2. Comités Section -->
-<section id="comites" class="section-experimental">
-  <div class="section-header-experimental">
+<section id="comites" class="seminario-section">
+  <div class="section-diagonal-split reverse"></div>
+
+  <div class="section-header">
     <div class="section-number">02</div>
-    <h2 class="section-title-experimental">COMITÉS<span class="title-accent">.</span></h2>
+    <h2 class="section-title">COMITÉS<span class="title-accent">.</span></h2>
   </div>
 
-  <div class="section-content-experimental">
-    <div class="comites-experimental">
-      <div class="comites-container">
-        <div class="comite-tabs">
-          <button class="comite-tab active" data-comite="cientifico">CIENTÍFICO</button>
-          <button class="comite-tab" data-comite="organizador">ORGANIZADOR</button>
-          <button class="comite-tab" data-comite="tecnico">TÉCNICO</button>
+  <div class="section-content">
+    <div class="comites-container">
+      <div class="comite-tabs">
+        <button class="comite-tab active" data-comite="cientifico">CIENTÍFICO</button>
+        <button class="comite-tab" data-comite="organizador">ORGANIZADOR</button>
+        <button class="comite-tab" data-comite="tecnico">TÉCNICO</button>
+      </div>
+
+      <div class="comites-content">
+        <div class="comite-panel active" id="cientifico">
+          <div class="comite-grid">
+            <div class="comite-member">
+              <div class="member-photo"></div>
+              <div class="member-info">
+                <h3 class="member-name">Dra. Ana Rodríguez Pérez</h3>
+                <div class="member-role">Presidenta</div>
+                <div class="member-institution">Universidad de Córdoba</div>
+              </div>
+            </div>
+
+            <div class="comite-member">
+              <div class="member-photo"></div>
+              <div class="member-info">
+                <h3 class="member-name">Dr. Francisco Martínez López</h3>
+                <div class="member-institution">Universidad Complutense de Madrid</div>
+              </div>
+            </div>
+
+            <div class="comite-member">
+              <div class="member-photo"></div>
+              <div class="member-info">
+                <h3 class="member-name">Dra. Elena Sánchez García</h3>
+                <div class="member-institution">Universidad de Sevilla</div>
+              </div>
+            </div>
+
+            <div class="comite-member">
+              <div class="member-photo"></div>
+              <div class="member-info">
+                <h3 class="member-name">Dr. Roberto Gómez Fernández</h3>
+                <div class="member-institution">Universidad de Barcelona</div>
+              </div>
+            </div>
+
+            <div class="comite-member">
+              <div class="member-photo"></div>
+              <div class="member-info">
+                <h3 class="member-name">Dra. Lucía Torres Méndez</h3>
+                <div class="member-institution">Universidad de Granada</div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="comites-content">
-          <div class="comite-panel active" id="cientifico">
-            <div class="comite-grid">
-              <div class="comite-member">
-                <div class="member-photo" style="background-color: var(--accent-green)"></div>
-                <div class="member-info">
-                  <h3 class="member-name">Dra. Ana Rodríguez Pérez</h3>
-                  <div class="member-role">Presidenta</div>
-                  <div class="member-institution">Universidad de Córdoba</div>
-                </div>
+        <div class="comite-panel" id="organizador">
+          <div class="comite-grid">
+            <div class="comite-member">
+              <div class="member-photo"></div>
+              <div class="member-info">
+                <h3 class="member-name">Dr. Carlos Jiménez Ruiz</h3>
+                <div class="member-role">Coordinador General</div>
+                <div class="member-institution">Universidad de Córdoba</div>
               </div>
+            </div>
 
-              <div class="comite-member">
-                <div class="member-photo" style="background-color: var(--accent-green)"></div>
-                <div class="member-info">
-                  <h3 class="member-name">Dr. Francisco Martínez López</h3>
-                  <div class="member-institution">Universidad Complutense de Madrid</div>
-                </div>
+            <div class="comite-member">
+              <div class="member-photo"></div>
+              <div class="member-info">
+                <h3 class="member-name">Dra. María López Sánchez</h3>
+                <div class="member-institution">Filmoteca de Andalucía</div>
               </div>
+            </div>
 
-              <div class="comite-member">
-                <div class="member-photo" style="background-color: var(--accent-green)"></div>
-                <div class="member-info">
-                  <h3 class="member-name">Dra. Elena Sánchez García</h3>
-                  <div class="member-institution">Universidad de Sevilla</div>
-                </div>
+            <div class="comite-member">
+              <div class="member-photo"></div>
+              <div class="member-info">
+                <h3 class="member-name">Dr. Javier Moreno Castillo</h3>
+                <div class="member-institution">Universidad de Córdoba</div>
               </div>
+            </div>
 
-              <div class="comite-member">
-                <div class="member-photo" style="background-color: var(--accent-green)"></div>
-                <div class="member-info">
-                  <h3 class="member-name">Dr. Roberto Gómez Fernández</h3>
-                  <div class="member-institution">Universidad de Barcelona</div>
-                </div>
-              </div>
-
-              <div class="comite-member">
-                <div class="member-photo" style="background-color: var(--accent-green)"></div>
-                <div class="member-info">
-                  <h3 class="member-name">Dra. Lucía Torres Méndez</h3>
-                  <div class="member-institution">Universidad de Granada</div>
-                </div>
+            <div class="comite-member">
+              <div class="member-photo"></div>
+              <div class="member-info">
+                <h3 class="member-name">Dra. Laura Fernández Díaz</h3>
+                <div class="member-institution">Centro Sociocultural Luciana Centeno</div>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="comite-panel" id="organizador">
-            <div class="comite-grid">
-              <div class="comite-member">
-                <div class="member-photo" style="background-color: var(--accent-green)"></div>
-                <div class="member-info">
-                  <h3 class="member-name">Dr. Carlos Jiménez Ruiz</h3>
-                  <div class="member-role">Coordinador General</div>
-                  <div class="member-institution">Universidad de Córdoba</div>
-                </div>
-              </div>
-
-              <div class="comite-member">
-                <div class="member-photo" style="background-color: var(--accent-green)"></div>
-                <div class="member-info">
-                  <h3 class="member-name">Dra. María López Sánchez</h3>
-                  <div class="member-institution">Filmoteca de Andalucía</div>
-                </div>
-              </div>
-
-              <div class="comite-member">
-                <div class="member-photo" style="background-color: var(--accent-green)"></div>
-                <div class="member-info">
-                  <h3 class="member-name">Dr. Javier Moreno Castillo</h3>
-                  <div class="member-institution">Universidad de Córdoba</div>
-                </div>
-              </div>
-
-              <div class="comite-member">
-                <div class="member-photo" style="background-color: var(--accent-green)"></div>
-                <div class="member-info">
-                  <h3 class="member-name">Dra. Laura Fernández Díaz</h3>
-                  <div class="member-institution">Centro Sociocultural Luciana Centeno</div>
-                </div>
+        <div class="comite-panel" id="tecnico">
+          <div class="comite-grid">
+            <div class="comite-member">
+              <div class="member-photo"></div>
+              <div class="member-info">
+                <h3 class="member-name">Miguel Ángel Pérez Sánchez</h3>
+                <div class="member-role">Coordinador Técnico</div>
+                <div class="member-institution">Filmoteca de Andalucía</div>
               </div>
             </div>
-          </div>
 
-          <div class="comite-panel" id="tecnico">
-            <div class="comite-grid">
-              <div class="comite-member">
-                <div class="member-photo" style="background-color: var(--accent-green)"></div>
-                <div class="member-info">
-                  <h3 class="member-name">Miguel Ángel Pérez Sánchez</h3>
-                  <div class="member-role">Coordinador Técnico</div>
-                  <div class="member-institution">Filmoteca de Andalucía</div>
-                </div>
+            <div class="comite-member">
+              <div class="member-photo"></div>
+              <div class="member-info">
+                <h3 class="member-name">Sara González Martín</h3>
+                <div class="member-institution">Universidad de Córdoba</div>
               </div>
+            </div>
 
-              <div class="comite-member">
-                <div class="member-photo" style="background-color: var(--accent-green)"></div>
-                <div class="member-info">
-                  <h3 class="member-name">Sara González Martín</h3>
-                  <div class="member-institution">Universidad de Córdoba</div>
-                </div>
-              </div>
-
-              <div class="comite-member">
-                <div class="member-photo" style="background-color: var(--accent-green)"></div>
-                <div class="member-info">
-                  <h3 class="member-name">David Ruiz Fernández</h3>
-                  <div class="member-institution">Centro Sociocultural Luciana Centeno</div>
-                </div>
+            <div class="comite-member">
+              <div class="member-photo"></div>
+              <div class="member-info">
+                <h3 class="member-name">David Ruiz Fernández</h3>
+                <div class="member-institution">Centro Sociocultural Luciana Centeno</div>
               </div>
             </div>
           </div>
@@ -391,14 +390,16 @@
 </section>
 
 <!-- 3. Links inscripción Section -->
-<section id="inscripcion" class="section-experimental">
-  <div class="section-header-experimental">
+<section id="inscripcion" class="seminario-section">
+  <div class="section-diagonal-split"></div>
+
+  <div class="section-header">
     <div class="section-number">03</div>
-    <h2 class="section-title-experimental">INSCRIPCIÓN<span class="title-accent">.</span></h2>
+    <h2 class="section-title">INSCRIPCIÓN<span class="title-accent">.</span></h2>
   </div>
 
-  <div class="section-content-experimental">
-    <div class="inscripcion-experimental">
+  <div class="section-content">
+    <div class="inscripcion-container">
       <div class="inscripcion-info">
         <div class="info-block">
           <h3 class="info-title">INFORMACIÓN GENERAL</h3>
@@ -487,20 +488,22 @@
 </section>
 
 <!-- 4. Ponentes Section -->
-<section id="ponentes" class="section-experimental">
-  <div class="section-header-experimental">
+<section id="ponentes" class="seminario-section">
+  <div class="section-diagonal-split reverse"></div>
+
+  <div class="section-header">
     <div class="section-number">04</div>
-    <h2 class="section-title-experimental">PONENTES<span class="title-accent">.</span></h2>
+    <h2 class="section-title">PONENTES<span class="title-accent">.</span></h2>
   </div>
 
-  <div class="section-content-experimental">
-    <div class="ponentes-experimental">
+  <div class="section-content">
+    <div class="ponentes-container">
       <div class="ponentes-slider">
         <div class="ponentes-track">
           <div class="ponente-slide">
-            <div class="ponente-card-experimental">
+            <div class="ponente-card">
               <div class="ponente-media">
-                <div class="ponente-image" style="background-color: var(--accent-green)"></div>
+                <div class="ponente-image"></div>
                 <div class="ponente-overlay"></div>
               </div>
               <div class="ponente-content">
@@ -516,9 +519,9 @@
           </div>
 
           <div class="ponente-slide">
-            <div class="ponente-card-experimental">
+            <div class="ponente-card">
               <div class="ponente-media">
-                <div class="ponente-image" style="background-color: var(--accent-green)"></div>
+                <div class="ponente-image"></div>
                 <div class="ponente-overlay"></div>
               </div>
               <div class="ponente-content">
@@ -534,9 +537,9 @@
           </div>
 
           <div class="ponente-slide">
-            <div class="ponente-card-experimental">
+            <div class="ponente-card">
               <div class="ponente-media">
-                <div class="ponente-image" style="background-color: var(--accent-green)"></div>
+                <div class="ponente-image"></div>
                 <div class="ponente-overlay"></div>
               </div>
               <div class="ponente-content">
@@ -552,51 +555,15 @@
           </div>
 
           <div class="ponente-slide">
-            <div class="ponente-card-experimental">
+            <div class="ponente-card">
               <div class="ponente-media">
-                <div class="ponente-image" style="background-color: var(--accent-green)"></div>
+                <div class="ponente-image"></div>
                 <div class="ponente-overlay"></div>
               </div>
               <div class="ponente-content">
                 <h3 class="ponente-name">Dra. Laura Gómez</h3>
                 <div class="ponente-role">Universidad Complutense de Madrid</div>
                 <p class="ponente-bio">Investigadora especializada en historia del cine español y patrimonio audiovisual. Directora del grupo de investigación "Memoria y Cine".</p>
-                <div class="ponente-links">
-                  <a href="#" class="ponente-link">CV</a>
-                  <a href="#" class="ponente-link">Publicaciones</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="ponente-slide">
-            <div class="ponente-card-experimental">
-              <div class="ponente-media">
-                <div class="ponente-image" style="background-color: var(--accent-green)"></div>
-                <div class="ponente-overlay"></div>
-              </div>
-              <div class="ponente-content">
-                <h3 class="ponente-name">Dr. Javier Pérez</h3>
-                <div class="ponente-role">Filmoteca de Andalucía</div>
-                <p class="ponente-bio">Responsable del departamento de restauración y conservación. Experto en técnicas de preservación de material fílmico en formatos obsoletos.</p>
-                <div class="ponente-links">
-                  <a href="#" class="ponente-link">CV</a>
-                  <a href="#" class="ponente-link">Publicaciones</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="ponente-slide">
-            <div class="ponente-card-experimental">
-              <div class="ponente-media">
-                <div class="ponente-image" style="background-color: var(--accent-green)"></div>
-                <div class="ponente-overlay"></div>
-              </div>
-              <div class="ponente-content">
-                <h3 class="ponente-name">Dra. María Fernández</h3>
-                <div class="ponente-role">Universidad de Sevilla</div>
-                <p class="ponente-bio">Especialista en antropología visual y documentación etnográfica. Directora del proyecto "Memorias familiares en imágenes".</p>
                 <div class="ponente-links">
                   <a href="#" class="ponente-link">CV</a>
                   <a href="#" class="ponente-link">Publicaciones</a>
@@ -613,8 +580,6 @@
             <span class="slider-dot"></span>
             <span class="slider-dot"></span>
             <span class="slider-dot"></span>
-            <span class="slider-dot"></span>
-            <span class="slider-dot"></span>
           </div>
           <button class="slider-arrow next">→</button>
         </div>
@@ -624,14 +589,16 @@
 </section>
 
 <!-- 5. Organizadores y logos Section -->
-<section id="organizadores" class="section-experimental">
-  <div class="section-header-experimental">
+<section id="organizadores" class="seminario-section">
+  <div class="section-diagonal-split"></div>
+
+  <div class="section-header">
     <div class="section-number">05</div>
-    <h2 class="section-title-experimental">ORGANIZADORES<span class="title-accent">.</span></h2>
+    <h2 class="section-title">ORGANIZADORES<span class="title-accent">.</span></h2>
   </div>
 
-  <div class="section-content-experimental">
-    <div class="organizadores-experimental">
+  <div class="section-content">
+    <div class="organizadores-container">
       <div class="organizadores-intro">
         <p class="intro-text">El Seminario sobre Archivo y Patrimonio Fílmico es posible gracias a la colaboración de diversas instituciones comprometidas con la preservación y difusión del patrimonio audiovisual.</p>
       </div>
@@ -640,21 +607,21 @@
         <div class="organizadores-column">
           <h3 class="column-title">ORGANIZAN</h3>
           <div class="logos-container">
-            <div class="logo-item-experimental">
+            <div class="logo-item">
               <div class="logo-shape">
                 <div class="logo-content">PLANNEO</div>
               </div>
               <div class="logo-name">PLANNEO</div>
             </div>
 
-            <div class="logo-item-experimental">
+            <div class="logo-item">
               <div class="logo-shape">
                 <div class="logo-content">FILMOTECA</div>
               </div>
               <div class="logo-name">Filmoteca de Andalucía</div>
             </div>
 
-            <div class="logo-item-experimental">
+            <div class="logo-item">
               <div class="logo-shape">
                 <div class="logo-content">UCO</div>
               </div>
@@ -666,28 +633,28 @@
         <div class="organizadores-column">
           <h3 class="column-title">COLABORAN</h3>
           <div class="logos-container">
-            <div class="logo-item-experimental">
+            <div class="logo-item">
               <div class="logo-shape">
                 <div class="logo-content">CSCLC</div>
               </div>
               <div class="logo-name">Centro Sociocultural Luciana Centeno</div>
             </div>
 
-            <div class="logo-item-experimental">
+            <div class="logo-item">
               <div class="logo-shape">
                 <div class="logo-content">JUNTA</div>
               </div>
               <div class="logo-name">Junta de Andalucía</div>
             </div>
 
-            <div class="logo-item-experimental">
+            <div class="logo-item">
               <div class="logo-shape">
                 <div class="logo-content">AYTO</div>
               </div>
               <div class="logo-name">Ayuntamiento de Córdoba</div>
             </div>
 
-            <div class="logo-item-experimental">
+            <div class="logo-item">
               <div class="logo-shape">
                 <div class="logo-content">MINCUL</div>
               </div>
